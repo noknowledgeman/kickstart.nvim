@@ -1,4 +1,7 @@
 return {
+  -- TODO: comments
+  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+
   -- predicting indent size
   'NMAC427/guess-indent.nvim',   
 
@@ -41,12 +44,13 @@ return {
       },
     }
   },
-
-  
   {
-    'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    config = true,
-  }, 
+    "folke/ts-comments.nvim",
+    event = "VeryLazy",
+    enabled = vim.fn.has("nvim-0.10.0") == 1,
+    config = function ()
+
+    end,
+  },
 }
 
